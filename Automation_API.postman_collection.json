@@ -1,0 +1,113 @@
+{
+	"info": {
+		"_postman_id": "924446b9-ce30-4fbe-9cf2-9d5993685136",
+		"name": "Automation API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26122818"
+	},
+	"item": [
+		{
+			"name": "Get Users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"data-types id is integer or number\", function () {\r",
+							"    var response = pm.response.json();\r",
+							"    pm.expect(response[0].id).to.be.a(\"number\");\r",
+							"});\r",
+							"pm.test(\"data-types name is string\", function () {\r",
+							"    var response = pm.response.json();\r",
+							"    pm.expect(response[0].name).to.be.a(\"string\");\r",
+							"});\r",
+							"pm.test(\"data-types username is string\", function () {\r",
+							"    var response = pm.response.json();\r",
+							"    pm.expect(response[0].username).to.be.a(\"string\");\r",
+							"});\r",
+							"pm.test(\"data-types email is string\", function () {\r",
+							"    var response = pm.response.json();\r",
+							"    pm.expect(response[0].email).to.be.a(\"string\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/users",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\": \"Rebels\",\r\n\"username\": \"rebels.test\",\r\n\"email\": \"rebels.test@mail.com\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/users",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

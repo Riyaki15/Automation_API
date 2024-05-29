@@ -1,0 +1,108 @@
+{
+	"id": "a99251cc-4bab-4560-b211-e65551a52e9a",
+	"name": "Automation API",
+	"timestamp": "2024-05-29T16:00:38.632Z",
+	"collection_id": "26122818-924446b9-ce30-4fbe-9cf2-9d5993685136",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 6,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2024-05-29T16:00:38.042Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "25c4173c-7d14-4902-9150-6ff1b5c00981",
+			"name": "Get Users",
+			"url": "https://jsonplaceholder.typicode.com/users",
+			"time": 36,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"data-types id is integer or number": true,
+				"data-types name is string": true,
+				"data-types username is string": true,
+				"data-types email is string": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"data-types id is integer or number": {
+					"pass": 1,
+					"fail": 0
+				},
+				"data-types name is string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"data-types username is string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"data-types email is string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				36
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"data-types id is integer or number": true,
+					"data-types name is string": true,
+					"data-types username is string": true,
+					"data-types email is string": true
+				}
+			]
+		},
+		{
+			"id": "51604766-4209-4df6-9901-7efa6e6802c8",
+			"name": "Post Users",
+			"url": "https://jsonplaceholder.typicode.com/users",
+			"time": 289,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				289
+			],
+			"allTests": [
+				{
+					"Status code is 201": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 325,
+	"collection": {
+		"requests": [
+			{
+				"id": "25c4173c-7d14-4902-9150-6ff1b5c00981",
+				"method": "GET"
+			},
+			{
+				"id": "51604766-4209-4df6-9901-7efa6e6802c8",
+				"method": "POST"
+			}
+		]
+	}
+}
